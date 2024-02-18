@@ -2,7 +2,7 @@
 
 ## Description
 
-Headless TGC is a theme for the TGC App. This theme is designed to work with PHP 8.0 and requires at least WordPress version 4.7.
+Headless TGC is a WordPress theme for the TGC App. This theme is designed to work with PHP 8.0 and requires at least WordPress version 4.7.
 
 ## Version
 
