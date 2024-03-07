@@ -39,6 +39,12 @@ function custom_add_cat()
         array('slug' => 'gaming')
     );
 
+    wp_insert_term(
+        'Podcast',
+        'category',
+        array('slug' => 'podcast')
+    );
+
 }
 
 /*
@@ -60,21 +66,21 @@ function blog_meta_callback($post)
     $blog_stored_meta = get_post_meta($post->ID);
     ?>
 
-<p>
-  <span class="blog-row-title">
-    <?php _e('Check if this is a featured post: <br/> <span style="color: red;">Only one post can be featured at a time.</span>', 'blog-textdomain') ?>
-  </span>
-<div class="blog-row-content">
-  <label for="featured-checkbox">
-    <input type="checkbox" name="featured-checkbox" id="featured-checkbox" value="yes" <?php if (isset($blog_stored_meta['featured-checkbox']))
+    <p>
+        <span class="blog-row-title">
+            <?php _e('Check if this is a featured post: <br/> <span style="color: red;">Only one post can be featured at a time.</span>', 'blog-textdomain') ?>
+        </span>
+    <div class="blog-row-content">
+        <label for="featured-checkbox">
+            <input type="checkbox" name="featured-checkbox" id="featured-checkbox" value="yes" <?php if (isset($blog_stored_meta['featured-checkbox']))
                 checked($blog_stored_meta['featured-checkbox'][0], 'yes'); ?> />
-    <?php _e('Featured Item', 'blog-textdomain') ?>
-  </label>
+            <?php _e('Featured Item', 'blog-textdomain') ?>
+        </label>
 
-</div>
-</p>
+    </div>
+    </p>
 
-<?php
+    <?php
 }
 
 /**
