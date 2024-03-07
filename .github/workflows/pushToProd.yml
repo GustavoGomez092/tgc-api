@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Ping URL
-        run: curl -sSf ${{ secrets['DEPLOY_URL'] }}
+        run: curl -sSf ${{ secrets.DEPLOY_URL }}
