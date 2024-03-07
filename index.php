@@ -8,5 +8,5 @@
 ?>
 
 <script type="text/javascript">
-window.location = 'https://google.com';
+  window.location = 'https://github.com/GustavoGomez092/tgc-api';
 </script>
