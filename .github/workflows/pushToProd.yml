@@ -1,0 +1,17 @@
+name: Trigger Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ping_url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Ping URL
+        run: curl -sSf ${{ secrets['DEPLOY_URL'] }}
