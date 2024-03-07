@@ -114,14 +114,14 @@ add_filter('graphql_post_object_connection_query_args', function ($query_args, $
 
     $featured = $args['where']['featured']; // Accessing the 'featured' argument.
 
-    if (isset ($featured) && $featured === true) {
+    if (isset ($featured) && $featured === 'yes') {
         $query_args['meta_query'] = [
             [
                 'key' => 'featured-checkbox',
                 'value' => 'yes',
             ],
         ];
-    } else {
+    } elseif (isset ($featured) && $featured === 'no') {
         $query_args['meta_query'] = [
             [
                 'key' => 'featured-checkbox',
