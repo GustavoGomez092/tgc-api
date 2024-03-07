@@ -109,6 +109,9 @@ add_action('graphql_register_types', function () {
 // Next, we add a filter to modify the query arguments.
 add_filter('graphql_post_object_connection_query_args', function ($query_args, $source, $args, $context, $info) {
 
+    if (!array_key_exists('featured', $args['where']))
+        return $query_args;
+
     $featured = $args['where']['featured']; // Accessing the 'featured' argument.
 
     if (isset ($featured) && $featured === true) {
@@ -116,6 +119,13 @@ add_filter('graphql_post_object_connection_query_args', function ($query_args, $
             [
                 'key' => 'featured-checkbox',
                 'value' => 'yes',
+            ],
+        ];
+    } else {
+        $query_args['meta_query'] = [
+            [
+                'key' => 'featured-checkbox',
+                'value' => 'no',
             ],
         ];
     }
