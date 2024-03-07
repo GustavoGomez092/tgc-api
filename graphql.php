@@ -8,6 +8,9 @@ register_graphql_object_type('Notification', [
         'title' => [
             'type' => 'String',
         ],
+        'id' => [
+            'type' => 'String',
+        ],
         'excerpt' => [
             'type' => 'String',
         ],
@@ -33,6 +36,7 @@ register_graphql_field('RootQuery', 'notification_center', [
         $data = array ();
         foreach ($query->posts as $post) {
             $data[] = [
+                'id' => $post->ID,
                 'title' => $post->post_title,
                 'excerpt' => $post->post_excerpt,
                 'date' => $post->post_date,
