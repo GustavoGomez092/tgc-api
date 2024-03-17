@@ -39,7 +39,7 @@ register_graphql_field('RootQuery', 'notification_center', [
         $data = array ();
         foreach ($query->posts as $post) {
             $data[] = [
-                'id' => base64_encode('notification-' . $post->ID),
+                'id' => base64_encode('post:' . $post->ID),
                 'postId' => $post->ID,
                 'title' => $post->post_title,
                 'excerpt' => $post->post_excerpt,
