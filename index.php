@@ -20,7 +20,7 @@ function deepLink(options) {
   var iosStoreLink = options.ios_store_link;
   var androidPackageName = options.android_package_name;
   var playStoreLink =
-    'https://market.android.com/details?id=' + androidPackageName;
+    'https://play.google.com/store/apps/details?id=' + androidPackageName;
   var ua = window.navigator.userAgent;
 
   // split the first :// from the url string
@@ -122,6 +122,6 @@ deepLink(options);
 </script>
 <?php else: ?>
 <script>
-window.location.href = 'https://www.google.com';
+window.location.href = 'https://play.google.com/store/apps/details?id=com.victorstein.tcg';
 </script>
 <?php endif; ?>
